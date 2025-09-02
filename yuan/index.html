@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Personal Page</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="A simple personal page with my photo, a travel video, and a short biography." />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">Hello, I’m <span class="accent">Yuanlong</span> 👋</h1>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#travel">Travel Video</a>
+        <a href="#extras">Extras</a>
+      </nav>
+    </div>
+  </header>
 
+  <main class="container">
+    <!-- Photo + Bio -->
+    <section id="about" class="hero">
+      <figure class="profile">
+        <!-- Replace the src with your smiling photo path -->
+        <img src="yuanlong.jpg" alt="Smiling portrait of Yuanlong" class="profile-img" />
+        <figcaption class="sr-only">A smiling photo of Yuanlong</figcaption>
+      </figure>
+
+      <div class="bio card">
+        <h2>About Me</h2>
+        <p>
+          Hi! I’m <strong>Yuanlong</strong>. I enjoy building things on the web,
+          exploring new food spots, and going for long walks with good playlists.
+          I’m currently learning front-end basics and polishing my CSS skills.
+        </p>
+        <p>
+          Three quick facts: I love <em>chocolate</em>, I can solve a Rubik’s Cube,
+          and I never say no to a beach day. Thanks for visiting!
+        </p>
+        <a class="btn" href="#travel" aria-label="Jump to my travel video">See my favorite destination</a>
+      </div>
+    </section>
+
+    <!-- YouTube Auto-Play (muted) -->
+    <section id="travel" class="section">
+      <h2>My Favorite Travel Destination 🌴</h2>
+      <p class="section-desc">
+        Here’s a short video about a place I really want to (or love to) visit.
+        The video auto-plays while muted (best practice for browsers).
+      </p>
+
+      <!-- Responsive 16:9 wrapper -->
+      <div class="video-wrapper card">
+        <!-- Replace VIDEO_ID with your YouTube video id -->
+        <iframe
+          class="video"
+          src="https://www.youtube.com/embed/LxtsWXNt3nU?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1
+          title="My favorite travel destination"
+          allow="autoplay; encrypted-media; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- Extras to show more CSS usage -->
+    <section id="extras" class="section">
+      <h2>Extras ✨</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Hobbies</h3>
+          <ul class="checklist">
+            <li>Cycling by the bay</li>
+            <li>Photography walks</li>
+            <li>Cooking simple pasta</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Contact</h3>
+          <p>
+            Say hi on
+            <a href="mailto:you@example.com">email</a> or
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>.
+          </p>
+          <button class="btn btn-outline" type="button" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+            Back to top
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> [Your Name]. Built with HTML & CSS basics.</p>
+    </div>
+  </footer>
+
+  <script>
+    // small enhancement: current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
